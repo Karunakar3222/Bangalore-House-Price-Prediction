@@ -7,7 +7,7 @@
 
 A comprehensive machine learning project that predicts house prices in Bangalore. This repository covers the entire pipeline from data cleaning and feature engineering to model training and deployment as a web application.
 
------
+
 
 ## 📋 Table of Contents
 
@@ -29,6 +29,11 @@ A comprehensive machine learning project that predicts house prices in Bangalore
 The real estate market is complex and dynamic. This project aims to simplify price prediction for properties in Bangalore by leveraging machine learning. Using a dataset of Bangalore housing listings, we perform extensive data preprocessing to handle missing values and outliers, engineer new features to improve accuracy, and train a regression model. The final model is wrapped in a Flask API and presented through a user-friendly web interface where users can input property details and receive an estimated price.
 
 -----
+## Project Demo
+
+https://github.com/user-attachments/assets/342d85f6-8968-4d6b-b833-c73c2e65f3e8
+
+
 
 ## 🔑 Key Features
 
