@@ -1,0 +1,225 @@
+/* --- Google Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* --- CSS Variables for Easy Theming --- */
+:root {
+    --primary-font: 'Poppins', sans-serif;
+    --primary-color: #4a90e2;
+    --secondary-color: #50e3c2;
+    --text-light: #f8f9fa;
+    --text-dark: #343a40;
+    --bg-dark-transparent: rgba(23, 28, 40, 0.75);
+    --border-color: rgba(255, 255, 255, 0.2);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --border-radius: 12px;
+}
+
+/* --- General & Body Styles --- */
+body {
+    font-family: var(--primary-font);
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    color: var(--text-light);
+    background: linear-gradient(135deg, #1f2937, #111827);
+    animation: fadeIn 1s ease-in-out;
+    /* This ensures the container and footer are stacked vertically and centered */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Adds space between container and footer */
+}
+
+/* --- Main Form Container (Glassmorphism Effect) --- */
+.container {
+    width: 100%;
+    max-width: 650px; /* Increased width for the grid layout */
+    padding: 40px;
+    background: var(--bg-dark-transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 32px 0 var(--shadow-color);
+    text-align: center;
+}
+
+/* --- Typography --- */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px var(--shadow-color);
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: var(--secondary-color);
+}
+
+/* --- New Form Grid Layout --- */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates two equal columns */
+    gap: 20px; /* Space between grid items */
+    margin-bottom: 20px;
+}
+
+.form-group {
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-light);
+    opacity: 0.9;
+}
+/* --- Typography (Label Fix) --- */
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-light);
+    /* opacity: 0.9;  <-- REMOVED to make text solid white */
+}
+
+
+/* --- Form Control Fixes --- */
+/* General styles for all form controls */
+.form-control {
+    /* --- FIX: Explicit Height & Vertical Centering --- */
+    height: 50px;           /* 1. Set a fixed, generous height */
+    line-height: 50px;      /* 2. Vertically center text by matching the height */
+    padding-top: 0;         /* 3. Reset vertical padding, as height now controls it */
+    padding-bottom: 0;
+    padding-left: 15px;     /* Keep horizontal padding for text */
+    padding-right: 45px;    /* Keep horizontal padding for the arrow */
+
+    /* --- Other existing styles --- */
+    width: 100%;
+    font-size: 1rem;
+    font-family: var(--primary-font);
+    color: var(--text-light);
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23f8f9fa%22%20d%3D%22M287%2069.4a17.6%2017.6%200%2000-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%20000%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.4-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+}
+
+/* Makes placeholder text (e.g., "Select Area Type") solid white */
+.form-control:invalid {
+    /* FIX #1: Removed transparency to make placeholder solid white */
+    color: var(--text-light);
+}
+
+.form-control option {
+    background-color: #2c3e50;
+    /* FIX #1: Ensures text in the dropdown list is white */
+    color: var(--text-light);
+}
+
+
+/* --- Footer Fix --- */
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    /* opacity: 0.7; <-- REMOVED to make footer text solid white */
+}
+/* --- Button Styling --- */
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -10px var(--shadow-color);
+    filter: brightness(1.1);
+}
+
+.btn-primary:active {
+    transform: translateY(-1px);
+}
+
+/* --- Result & Footer --- */
+.last {
+    text-align: center;
+    color: var(--secondary-color);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 25px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+}
+
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    opacity: 0.7;
+}
+
+.footer a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--text-light);
+    text-decoration: underline;
+}
+
+/* --- Utility & Animations --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    appearance: textfield;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+}
